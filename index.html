@@ -4,46 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Abdullah Ekşi</title>
+    <!-- CSS dosyasının eklenmesi -->
     <link rel="stylesheet" href="style.css?version=1905">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+    <!-- Font Awesome kütüphanesinin eklenmesi -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
 
-      <div class="load" id="loader">
-         <div class="planet">
+    <!-- Yükleme ekranı -->
+    <div class="load" id="loader">
+        <div class="planet">
             <div class="ring"></div>
-               <div class="cover-ring"></div>
+            <div class="cover-ring"></div>
             <div class="spots">
-               <span></span>
-               <span></span>
-               <span></span>
-               <span></span>
-               <span></span>
-               <span></span>
-               <span></span>
-
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
-         </div>
-         <p>Yükleniyor</p>
-      </div>
+        </div>
+        <p>Yükleniyor</p>
+    </div>
 
-
+    <!-- Ana içerik -->
     <div id="content" class="hidden">
         <div class="container">
             <div class="card">
                 <div class="card-border-top"></div>
                 <div class="img">
+                    <!-- Profil resmi -->
                     <img class="img-fluid" src="https://lh3.googleusercontent.com/a/ACg8ocIfa-PZiN3tuJJERB80cqALsVyVM5VrwRTUN3ISq5Y5cjgb81c=s1200" alt="Profile Picture">
                 </div>
                 <span>Abdullah Ekşi</span>
                 <p class="job">Developer</p>
 
-
-
+                <!-- Web Sitesi Butonu -->
                 <button onclick="yonlendir('https://abdullaheksi.com.tr')" class="btn" type="button">
-                    <strong> <i  style="position:absolute; left:25px" class="fa fa-globe"></i> Web Sitesi</strong>
+                    <strong> <i style="position:absolute; left:25px" class="fa fa-globe"></i> Web Sitesi</strong>
                     <div id="container-stars">
                         <div id="stars"></div>
                     </div>
@@ -53,9 +54,9 @@
                     </div>
                 </button>
 
-          <button onclick="yonlendir('https://github.com/abdullah-eksi')" class="btn" type="button">
-                    <strong> <i  style="position:absolute; left:25px" class="fa-brands fa-github"></i> Github</strong>
-
+                <!-- GitHub Butonu -->
+                <button onclick="yonlendir('https://github.com/abdullah-eksi')" class="btn" type="button">
+                    <strong> <i style="position:absolute; left:25px" class="fa-brands fa-github"></i> Github</strong>
                     <div id="container-stars">
                         <div id="stars"></div>
                     </div>
@@ -65,9 +66,9 @@
                     </div>
                 </button>
 
-
+                <!-- Instagram Butonu -->
                 <button onclick="yonlendir('https://instagram.com/_abdullaheksi_')" class="btn" type="button">
-                    <strong><i  style="position:absolute; left:25px" class="fa-brands fa-instagram"></i> İnstagram</strong>
+                    <strong><i style="position:absolute; left:25px" class="fa-brands fa-instagram"></i> İnstagram</strong>
                     <div id="container-stars">
                         <div id="stars"></div>
                     </div>
@@ -77,8 +78,9 @@
                     </div>
                 </button>
 
+                <!-- Company Instagram Butonu -->
                 <button onclick="yonlendir('https://instagram.com/aexpsoft')" class="btn" type="button">
-                    <strong><i  style="position:absolute; left:25px" class="fa-brands fa-instagram"></i> Company İnstagram</strong>
+                    <strong><i style="position:absolute; left:25px" class="fa-brands fa-instagram"></i> Company İnstagram</strong>
                     <div id="container-stars">
                         <div id="stars"></div>
                     </div>
@@ -88,30 +90,30 @@
                     </div>
                 </button>
 
-
+                <!-- LinkedIn Butonu -->
                 <button onclick="yonlendir('https://www.linkedin.com/in/abdullah-ekşi/')" class="btn" type="button">
                     <strong><i style="position:absolute; left:25px" class="fa-brands fa-linkedin"></i>Linkedin</strong>
                     <div id="container-stars">
-                         <div id="stars"></div>
+                        <div id="stars"></div>
                     </div>
                     <div id="glow">
                         <div class="circle"></div>
                         <div class="circle"></div>
                     </div>
                 </button>
-
-
 
             </div>
         </div>
     </div>
 
+    <!-- JavaScript Kodları -->
     <script type="text/javascript">
+        // Yeni sekmede belirtilen URL'yi açan fonksiyon
+        function yonlendir(url) {
+            window.open(url, '_blank');
+        }
 
-    function yonlendir(url) {
-        window.open(url, '_blank');
-  }
-
+        // Sayfa yüklendiğinde yükleyiciyi gizleyip içeriği gösteren event listener
         window.addEventListener("load", function() {
             var loader = document.getElementById("loader");
             var content = document.getElementById("content");
@@ -119,7 +121,7 @@
             setTimeout(function() {
                 loader.style.display = "none";  
                 content.classList.remove("hidden");
-            }, 1000);
+            }, 1000); // 1 saniye bekle
         });
     </script>
 </body>
